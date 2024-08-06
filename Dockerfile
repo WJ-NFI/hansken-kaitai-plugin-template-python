@@ -29,8 +29,9 @@ COPY --from=builder /app/dist/*.whl /app/dist/
 RUN pip install --no-index /app/dist/*.whl
 
 # copy the actual plugin file, run that on port 8999
+RUN kaitai-struct-compiler -t python structs/*.py -d structs/
 COPY *.py /app/
-COPY structs/* /app/structs/
+COPY structs/*.py /app/structs/
 EXPOSE 8999
 ENTRYPOINT ["/usr/local/bin/serve_plugin", "-vv"]
 CMD ["/app/plugin.py", "8999"]
