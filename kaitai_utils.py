@@ -1,7 +1,10 @@
 import enum
+import importlib
 import inspect
 import json
+import os
 from io import BufferedWriter
+from os.path import isfile, join
 from typing import Any, BinaryIO, Dict, Generator, List, Type
 
 import kaitaistruct
@@ -27,7 +30,7 @@ def get_kaitai_class():
     """
     path = "./structs/"
     files_in_structs = [f for f in os.listdir(path) if isfile(join(path, f))]
-    ksy_file_list = list(filter(lambda f: (custom_endswith(f, ".ksy")), files))
+    ksy_file_list = list(filter(lambda f: (f.endswith(".ksy")), files_in_structs))
 
     if len(ksy_file_list) > 1:
         exit(-1)

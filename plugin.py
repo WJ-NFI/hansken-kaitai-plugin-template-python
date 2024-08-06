@@ -27,7 +27,7 @@ class Plugin(ExtractionPlugin):
 
     def process(self, trace, data_context):
         with trace.open(data_type='text', mode='wb') as writer:
-            kaitai_utils.write_to_json(trace.open(), writer, get_kaitai_class())
+            kaitai_utils.write_to_json(trace.open(), writer, kaitai_utils.get_kaitai_class())
 
 
 if __name__ == '__main__':
