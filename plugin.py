@@ -4,7 +4,6 @@ from hansken_extraction_plugin.runtime.extraction_plugin_runner import run_with_
 from logbook import Logger
 
 import kaitai_utils
-from structs.{FILETYPE FILE} import {FILETYPE CLASS}
 
 
 log = Logger(__name__)
