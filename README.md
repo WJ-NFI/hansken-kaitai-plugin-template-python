@@ -3,16 +3,10 @@
 This repository contains a template for a Hansken Kaitai plugin written in Python. [Kaitai](https://kaitai.io/) enables to read binary data structures from all sorts of files or network streams.
 The Kaitai plugin for Hansken, enables to parse a file using a Kaitai struct and write the parse result as a JSON. The template contains the general structure of a Kaitai plugin, including the required build steps.
 
-To get started developing Hansken Extraction Plugins, read the [Getting Started Documentation](https://netherlandsforensicinstitute.github.io/hansken-extraction-plugin-sdk-documentation/latest/dev/python/getting_started.html).
-Furthermore, it is strongly recommended to take note of the [Hansken Extraction Plugins for plugin developers documentation](https://netherlandsforensicinstitute.github.io/hansken-extraction-plugin-sdk-documentation/latest/).
-
-The implementer of this template is required to conduct a few general steps to enable parsing the contents of a specific filetype to a JSON, as is explained in more detail below.
-The template contains utility in [`kaitai_utils.py`](kaitai_utils.py). This utility python file, which only contains 'static' methods, contains the generic parse methods. 
-The implementer of the new Kaitai plugin, does not need to touch this `kaitai_utils.py` file. 
-
-For more information on the supported formats by Kaitai, go to https://formats.kaitai.io/. 
-
-An example implementation of a KaiTai plugin is found [here](https://github.com/NetherlandsForensicInstitute/hansken-extraction-plugin-sdk-examples/tree/main/python/appledoublekaitai).
+- To get started developing Hansken Extraction Plugins, read the [Getting Started Documentation](https://netherlandsforensicinstitute.github.io/hansken-extraction-plugin-sdk-documentation/latest/dev/python/getting_started.html).
+- It is strongly recommended to take note of the [Hansken Extraction Plugins for plugin developers documentation](https://netherlandsforensicinstitute.github.io/hansken-extraction-plugin-sdk-documentation/latest/).
+- For more information on the supported formats by Kaitai, go to https://formats.kaitai.io/. 
+- An example implementation of a Hansken Kaitai plugin is found [here](https://github.com/NetherlandsForensicInstitute/hansken-extraction-plugin-sdk-examples/tree/main/python/appledoublekaitai).
 
 To transform this template into an implementation, we suggest to conduct the following steps:
 * Clone the template plugin to get started on implementing your Kaitai plugin for Hansken
