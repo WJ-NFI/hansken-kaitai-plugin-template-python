@@ -12,6 +12,7 @@ The implementer of the new Kaitai plugin, does not need to touch this `kaitai_ut
 
 For more information on the supported formats by Kaitai, go to https://formats.kaitai.io/. 
 
+An example implementation of a KaiTai plugin is found [here](https://github.com/NetherlandsForensicInstitute/hansken-extraction-plugin-sdk-examples/tree/main/python/appledoublekaitai).
 
 To transform this template into an implementation, we suggest to conduct the following steps:
 * Clone the template plugin to get started on implementing your Kaitai plugin for Hansken
