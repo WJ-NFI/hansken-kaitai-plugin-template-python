@@ -10,7 +10,7 @@ The Kaitai plugin for Hansken, enables to parse a file using a Kaitai struct and
 
 To transform this template into an implementation, we suggest to conduct the following steps:
 * Clone the template plugin to get started on implementing your Kaitai plugin for Hansken
-* Go to [`https:/ide.kaitai.io/`] to download a Kaitai token. This is the ```.ksy``` file you need in the next step.
+* Go to [`https:/ide.kaitai.io/`](Kaitai) to download a Kaitai token. This is the ```.ksy``` file you need in the next step.
 * Place the *.ksy file of interest in the [`structs`](structs) directory
 * Update the plugin info in [`plugin.py`](plugin.py)
 * Make sure you set the matcher on the FireFli filetype of your interest in [`plugin.py`](plugin.py) with a suitable HQL statement
