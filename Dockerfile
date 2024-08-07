@@ -29,7 +29,8 @@ COPY --from=builder /app/dist/*.whl /app/dist/
 RUN pip install --no-index /app/dist/*.whl
 
 # copy the actual plugin file, run that on port 8999
-COPY *.py /app/
+# copy the actual plugin file, run that on port 8999
+COPY *.py ./
 RUN mkdir --parents structs
 COPY structs/* structs/
 EXPOSE 8999
@@ -38,4 +39,4 @@ RUN apt-get -y update; apt-get -y install curl
 RUN curl -LO https://github.com/kaitai-io/kaitai_struct_compiler/releases/download/0.10/kaitai-struct-compiler_0.10_all.deb
 RUN yes | apt-get install ./kaitai-struct-compiler_0.10_all.deb
 RUN cd structs && kaitai-struct-compiler -t python *.ksy
-CMD ["/app/plugin.py", "8999"]
+CMD ["plugin.py", "8999"]
