@@ -30,11 +30,9 @@ RUN cd structs && ../kaitai-struct-compiler-0.10/bin/kaitai-struct-compiler *.ks
 # use a 'slim' image for running the actual plugin
 
 FROM python:3.11
-ARG PIP_INDEX_URL=https://nexus.dev.holmes.nl/repository/pypi-all/simple
 RUN mkdir --parents /app/dist
 COPY --from=builder /app/dist/*.whl /app/dist/
 COPY --from=builder /structs/ /app/structs/
-RUN pip install --upgrade pip
 RUN pip install --no-index /app/dist/*.whl
 COPY *.py /app/
 EXPOSE 8999
