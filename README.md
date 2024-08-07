@@ -15,9 +15,7 @@ For more information on the supported formats by Kaitai, go to https://formats.k
 
 To transform this template into an implementation, we suggest to conduct the following steps:
 * Clone the template plugin to get started on implementing your Kaitai plugin for Hansken
-* Navigate to https://ide.kaitai.io/#
-* Download the python parser for the filetype of your interest to [`structs`](structs)
-* In plugin.py replace {FILETYPE FILE} and {FILETYPE CLASS} with the correct references to the filetype and class you just downloaded
+* Place the *.ksy file of interest in the [`structs`](structs) directory
 * Update the plugin info in [`plugin.py`](plugin.py)
 * Make sure you set the matcher on the FireFli filetype of your interest in [`plugin.py`](plugin.py) with a suitable HQL statement
 * Create test input data in the folder [`testdata/input`](testdata/input)
