@@ -16,10 +16,11 @@ ARG PIP_INDEX_URL=https://pypi.org/simple/
 RUN mkdir --parents /app/dist
 RUN apt-get -y update; apt-get -y install curl default-jre unzip pip
 COPY requirements.txt /app/requirements.txt
-
 RUN pip wheel --requirement /app/requirements.txt --wheel-dir /app/dist
+RUN apt-get -y install findutils
 RUN mkdir --parents /structs
 COPY structs/* /structs/
+RUN if [ "$(find ./structs/ -type f -name '*.ksy' | wc -l)" -ne 1 ]; then exit 1 ; fi
 RUN curl -LO https://github.com/kaitai-io/kaitai_struct_compiler/releases/download/0.10/kaitai-struct-compiler-0.10.zip
 RUN unzip kaitai-struct-compiler-0.10.zip
 RUN cd structs && ../kaitai-struct-compiler-0.10/bin/kaitai-struct-compiler *.ksy -t python --python-package structs
