@@ -4,7 +4,6 @@ from hansken_extraction_plugin.runtime.extraction_plugin_runner import run_with_
 from logbook import Logger
 
 import kaitai_utils
-from structs.{FILETYPE FILE} import {FILETYPE CLASS}
 
 
 log = Logger(__name__)
@@ -27,7 +26,7 @@ class Plugin(ExtractionPlugin):
 
     def process(self, trace, data_context):
         with trace.open(data_type='text', mode='wb') as writer:
-            kaitai_utils.write_to_json(trace.open(), writer, {FILETYPE CLASS})
+            kaitai_utils.write_to_json(trace.open(), writer, kaitai_utils.get_kaitai_class())
 
 
 if __name__ == '__main__':
